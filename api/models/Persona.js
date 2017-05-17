@@ -24,10 +24,14 @@ module.exports = {
           type:'string',
           required: true
         },
+        curp : {
+          type : 'string',
+          required : true,
+          unique: true
+        },
         email: {
            type: 'string',
-           required: true,
-           unique: true
+           required: true
          },
          telefono : {
            type:'string',
