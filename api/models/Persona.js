@@ -51,7 +51,56 @@ module.exports = {
          },
          rol : {
            type:'string',
-           required: true
+           required: true,
+           defaultsTo : 'cmprdr'
+         },
+         login : {
+           type : 'string',
+           required : true
+         },
+         password : {
+           type : 'string',
+           required : true
+         },
+         passwordConfirmation : {
+           type : 'string',
+           required : true
+         },
+         encryptedPassword : {
+           type : 'string'
          }
+
+
+             // Este método es para evitar pasar toda la información del modelo
+             // Evitamos pasar los siguientes parámetros: password, confirmation, encryptedpassword y _csrf.
+           ,toJSON: function() {
+             var obj = this.toObject();
+             delete obj.password;
+             delete obj.confirmation;
+             delete  obj.encryptedPassword;
+             delete obj._csrf;
+             return obj;
+           }
   }
+  // ,beforeCreate:  function(values, next) {
+  //   console.log('Ya entre al beforeCreate');
+  //     var password = values.password;
+  //     var passwordConfirmation = values.passwordConfirmation;
+  //     console.log(password+";"+passwordConfirmation);
+  //     if(!password || !passwordConfirmation || password!=values.passwordConfirmation){
+  //       var passwordDoesNoMatchError = [{
+  //         name : 'passwordDoesNoMatchError',
+  //         message : 'Las contrasenias deben coincidir'
+  //       }]
+  //       return next({
+  //         err:passwordDoesNoMatchError
+  //       });
+  //     }
+  //     require('bcrypt').hash(values.password,10, function passwordEncrypted(err, encryptedPassword) {
+  //       values.encryptedPassword = encryptedPassword;
+  //       values.password = null;
+  //       values.passwordConfirmation = null;
+  //       next();
+  //     });
+  // }
 };

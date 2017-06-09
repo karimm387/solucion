@@ -9,16 +9,19 @@ setTimeout(function sunrise () {
   document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
 }, 0);
 </script>
-
-<div class="default-page">
-  <div class="header">
-    <h1 id="main-title" class="container"><%= __('A brand new app.') %></h1>
-    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
-  </div>
-  <div class="main container clearfix">
-    <!-- <h1>Getting started</h1>
-    <p>Don't worry, we've got your back.</p> -->
-  
-
-  </div>
-</div>
+<form class="form-singin" action="" method="POST" accept-charset="utf-8">
+<label>Name</label>
+<input type="string"  name="name"  class="form-control">
+<label>Lasr Name </label>
+<input type="string" name="lastname"  class="form-control">
+<label>UserName</label>
+<input type="string" name="username"  class="form-control">
+<label>Password</label>
+<input type="password" name="password"  class="form-control">
+<label>password Confirmation</label>
+<input type="password" name="passwordConfirmation"  class="form-control">
+<label>Email</label>
+<input type="email" name="email"  class="form-control">
+<br>
+<input type="submit"  class="btn btn-success"/>
+</form>
