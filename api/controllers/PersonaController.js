@@ -27,7 +27,7 @@ module.exports = {
 		 login : req.param("login"),
 		 password : req.param('password'),
 		 passwordConfirmation : req.param('passwordConfirmation'),
-		 encryptedPassword : req.param('encryptedPassword')
+	//	 encryptedPassword : req.param('encryptedPassword')
 	 }
 
 	 console.log("password"+personaObj.password);
