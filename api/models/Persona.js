@@ -29,10 +29,10 @@ module.exports = {
           required : true,
           unique: true
         },
-        email: {
-           type: 'string',
-           required: true
-         },
+        // email: {
+        //    type: 'string',
+        //    required: true
+        //  },
          telefono : {
            type:'string',
            required: true
