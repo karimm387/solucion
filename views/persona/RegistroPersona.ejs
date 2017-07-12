@@ -51,9 +51,23 @@ window.onload=function() {
   											<th>Email</th>
   											<th>Telefono</th>
   											<th>Estado</th>
+                        <th colspan="2" class="text-center">Acciones</th>
   										</tr>
   									</thead>
-  									<tbody id="tblPersonas"></tbody>
+
+  									<tbody id="tblPersonas">
+                    <%_.each(persona, function(persona){%>
+                      <tr>
+                        <td><%= persona.nombre%></td>
+                        <td><%= persona.login%></td>
+                        <td><%= persona.curp%></td>
+                        <td><%= persona.email%></td>
+                        <td><%= persona.telefono%></td>
+                        <td><%= persona.estado%></td>
+                      </tr>
+                    <% })%>
+                    </tbody>
+
   								</table>
   							</fieldset>
   						</div>
@@ -151,7 +165,7 @@ window.onload=function() {
                           <label>Contrase&ntilde;a</label>
                     </div>
                     <div class="col-sm-6">
-                          <input type="password" name="password"  class="form-control">
+                          <input type="password" name="password" id="password" class="form-control">
                     </div>
                   </div>
                   <div class="form-group">
@@ -159,7 +173,7 @@ window.onload=function() {
                          <label>Confirma Contrase&ntilde;a</label>
                    </div>
                    <div class="col-sm-6">
-                           <input type="password" name="passwordConfirmation"  class="form-control">
+                           <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
                    </div>
                   </div>
                   <div class="form-group">
@@ -169,7 +183,7 @@ window.onload=function() {
                     <div class="col-sm-6">
                       <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="email" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="email" name="email" id="email" aria-describedby="basic-addon1">
                       </div>
                     </div>
                   </div>

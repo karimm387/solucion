@@ -29,10 +29,10 @@ module.exports = {
           required : true,
           unique: true
         },
-        // email: {
-        //    type: 'string',
-        //    required: true
-        //  },
+        email: {
+           type: 'string',
+           required: true
+         },
          telefono : {
            type:'string',
            required: true
@@ -82,25 +82,25 @@ module.exports = {
              return obj;
            }
   }
-  // ,beforeCreate:  function(values, next) {
-  //   console.log('Ya entre al beforeCreate');
-  //     var password = values.password;
-  //     var passwordConfirmation = values.passwordConfirmation;
-  //     console.log(password+";"+passwordConfirmation);
-  //     if(!password || !passwordConfirmation || password!=values.passwordConfirmation){
-  //       var passwordDoesNoMatchError = [{
-  //         name : 'passwordDoesNoMatchError',
-  //         message : 'Las contrasenias deben coincidir'
-  //       }]
-  //       return next({
-  //         err:passwordDoesNoMatchError
-  //       });
-  //     }
-  //     require('bcrypt').hash(values.password,10, function passwordEncrypted(err, encryptedPassword) {
-  //       values.encryptedPassword = encryptedPassword;
-  //       values.password = null;
-  //       values.passwordConfirmation = null;
-  //       next();
-  //     });
-  // }
+  ,beforeCreate:  function(values, next) {
+    console.log('Ya entre al beforeCreate');
+      var password = values.password;
+      var passwordConfirmation = values.passwordConfirmation;
+      console.log(password+";"+passwordConfirmation);
+      if(!password || !passwordConfirmation || password!=values.passwordConfirmation){
+        var passwordDoesNoMatchError = [{
+          name : 'passwordDoesNoMatchError',
+          message : 'Las contrasenias deben coincidir'
+        }]
+        return next({
+          // err:passwordDoesNoMatchError
+        });
+      }
+      require('bcrypt').hash(values.password,10, function passwordEncrypted(err, encryptedPassword) {
+        values.encryptedPassword = encryptedPassword;
+        values.password = null;
+        values.passwordConfirmation = null;
+        next();
+      });
+  }
 };
