@@ -9,4 +9,7 @@ window.onload = function() {
   		minView : 2,
   		forceParse : 0
   	});
+
+
+    alert(persona.nombre);
 };

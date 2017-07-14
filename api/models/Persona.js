@@ -83,7 +83,6 @@ module.exports = {
            }
   }
   ,beforeCreate:  function(values, next) {
-    console.log('Ya entre al beforeCreate');
       var password = values.password;
       var passwordConfirmation = values.passwordConfirmation;
       console.log(password+";"+passwordConfirmation);
