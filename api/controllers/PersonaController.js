@@ -18,8 +18,8 @@ module.exports = {
 			});
 		});
  } ,
- guardar : function(req, res){
 
+ guardar : function(req, res){
 	 var personaObj = {
 		 nombre : req.param("nombre"),
 		 apPaterno : req.param("apPaterno"),
@@ -47,13 +47,13 @@ module.exports = {
 				return res.redirect('persona/RegistroPersona');
 	});
 },
-// show : function(req, res, next) {
-// 	Persona.findOne(req.param("id"), function userFounder(err, user) {
-// 		if(err)
-// 			return next(err);
-// 		res.view({
-// 			persona:persona
-// 		});
-// 	});
-// 	},
+editar : function(req, res, next) {
+	Persona.findOne(req.param("id"), function userFounder(err, user) {
+		if(err)
+			return next(err);
+		res.view({
+			persona:persona
+		});
+	});
+	}
 };

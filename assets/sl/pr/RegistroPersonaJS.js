@@ -11,5 +11,26 @@ window.onload = function() {
   	});
 
 
-    alert(persona.nombre);
+
 };
+function Persona(){
+  this.nombre;
+  this.apPaterno;
+  this.apMaterno;
+  this.fechaNacimiento;
+  this.curp;
+  this.email;
+  this.telefono;
+  this.colonia;
+  this.calle;
+  this.numero;
+  this.rol;
+  this.login;
+  this.password;
+}
+
+function editarRegistro(persn) {
+Persona pe = new Persona()
+  pe = persn;
+    alert(pe.nombre);
+}

@@ -51,10 +51,9 @@ window.onload=function() {
   											<th>Email</th>
   											<th>Telefono</th>
   											<th>Estado</th>
-                        <th colspan="2" class="text-center">Acciones</th>
+                        <th class="text-center">Acciones</th>
   										</tr>
   									</thead>
-
   									<tbody id="tblPersonas">
                     <%_.each(persona, function(persona){%>
                       <tr>
@@ -64,10 +63,14 @@ window.onload=function() {
                         <td><%= persona.email%></td>
                         <td><%= persona.telefono%></td>
                         <td><%= persona.estado%></td>
+                        <td class="text-center">
+                          <button type="button" class="btn btn-primary" onclick="editarRegistro(JSON.stringify(<%=persona%>);">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                          </button>
+                        <button type="button" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                       </tr>
                     <% })%>
                     </tbody>
-
   								</table>
   							</fieldset>
   						</div>
